@@ -971,7 +971,8 @@ div.tabContent {
 .backgroundContainer {
   background-color: rgba(var(--accent), 0.17) !important;
 }
-.noBackdropTransparency .detailPageSecondaryContainer,
+.noBackdropTransparency .detailPagePrimaryContainer, 
+.noBackdropTransparency .detailPageSecondaryContainer
 .backgroundContainer {
     background-color: transparent !important;
 }
