@@ -199,6 +199,14 @@ div#loginPage {
   width: 80vw;
 }
 .backdropImage {
+  filter: blur(5px) contrast(120%) brightness(50%);
+  mask-image: linear-gradient(to right, transparent, black),
+    linear-gradient(to top, transparent, black);
+  -webkit-mask-image: linear-gradient(to right, transparent, black),
+    linear-gradient(to top, transparent, black);
+  mask-composite: source-in;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
   animation: 0.2s ease-in-out both backdrop-fadein;
 }
 .layout-mobile .backgroundContainer,
@@ -825,6 +833,9 @@ span.homeLibraryText {
 .layout-desktop .detailPageContent {
   padding-left: 5%;
 }
+[dir=ltr] .detailPagePrimaryContent {
+  padding-left: 3.45vw;
+}
 .layout-desktop .detailPagePrimaryContent {
   width: 69vw;
   padding-bottom: 3em;
@@ -852,6 +863,8 @@ span.homeLibraryText {
   font-weight: 400;
 }
 .infoWrapper {
+  --webkit-flex: unset !important;
+  flex: unset !important;
   margin-bottom: 3vh;
 }
 .layout-desktop .btnShuffle,
@@ -2252,7 +2265,6 @@ fieldset {
 .layout-desktop .nextUpSection {
   border-radius: 34px;
   left: calc(70vw - -0em);
-  top: calc(50vh + -12em);
   margin-right: -30vw;
   margin-bottom: 1vh;
   padding-left: 2.62em;
@@ -2353,6 +2365,9 @@ div.tabContent {
 }
 .detailRibbon {
   background: #fff0;
+}
+.layout-desktop [dir=ltr] .detailRibbon, .layout-tv [dir=ltr] .detailRibbon {
+  padding-left: 0;
 }
 .layout-desktop .detailRibbon {
   margin-top: 0 !important;
