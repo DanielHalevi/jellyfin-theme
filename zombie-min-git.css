@@ -2151,6 +2151,13 @@ mask-image: none !important;
 #itemDetailPage {
 padding: 0em !important;
 }
+[dir=ltr] .detailPagePrimaryContent, .layout-desktop [dir=ltr] .detailRibbon, .layout-tv [dir=ltr] .detailRibbon {
+  padding-left: 3.45vw;
+}
+.detailRibbon {
+  -webkit-flex: unset !important;
+  flex: unset !important;
+}
 #childrenCollapsible .padded-right {
   padding-right: 38%;
 }
