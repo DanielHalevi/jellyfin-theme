@@ -2105,7 +2105,6 @@ fieldset {
   height: 50px;
 }
 @media all and (min-width: 100em) {
-  #indexPage,
   #moviesPage,
   #musicRecommendedPage,
   #tvRecommendedPage {
@@ -2115,7 +2114,6 @@ fieldset {
   }
 }
 @media all and (max-width: 100em) {
-  #indexPage,
   #moviesPage,
   #musicRecommendedPage,
   #tvRecommendedPage {
