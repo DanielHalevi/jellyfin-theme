@@ -8,12 +8,12 @@ h4 {
   font-family: Figtree, sans-serif;
 }
 :root {
-  --accent: 255, 255, 255;
-  --accent-off: 36, 36, 36;
-  --dark: 24, 24, 24;
-  --darkest: 12, 12, 12;
-  --dark-highlight: 48, 48, 48;
-  --dark-apparent: 43, 43, 43;
+  --accent: 216, 196, 241;         /* #D8C4F1 */
+  --accent-off: 123, 116, 132;     /* #7B7484 */
+  --dark: 34, 31, 38;              /* #221F26 */
+  --darkest: 26, 24, 30;           /* #1A181E */
+  --dark-highlight: 67, 62, 73;    /* #433E49 */
+  --dark-apparent: 36, 33, 41;     /* #242129 */
   --white: 243, 242, 243;
   --white-off: 207, 221, 233;
   --jade-green: 0, 172, 111;
@@ -24,12 +24,8 @@ h4 {
   --rounding-large: 24px;
   --rounding-circle: 100px;
 }
-.adminDrawerLogo img,
-imgLogoIcon {
-  content: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
-}
-.pageTitleWithLogo {
-  background-image: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
+h3.pageTitle.pageTitleWithLogo.pageTitleWithDefaultLogo {
+  background-image: url("logo.png") !important;
 }
 @media only screen and (max-device-width: 767px) {
   .featurediframe {
@@ -84,13 +80,16 @@ imgLogoIcon {
 }
 .emby-button-foreground,
 .homeLibraryText {
-  color: rgb(var(--darkest));
+  color: rgb(156, 156, 156);
+}
+.paper-icon-button-light>.material-icons {
+  font-size: 1em !important;
 }
 #indexPage .homeLibraryButton,
 .emby-tab-button {
   background: 0 0 !important;
   min-width: 0 !important;
-  max-width: 50vw !important;
+  max-width: 50em !important;
   width: fit-content !important;
 }
 .layout-desktop .emby-tabs-slider,
@@ -125,7 +124,8 @@ imgLogoIcon {
   border-radius: var(--rounding-circle) !important;
 }
 #homeTab .homeLibraryButton {
-  background: rgba(var(--accent), 0.4) !important;
+  background: rgba(40, 40, 40, 0.8) !important;
+  color: rgb(190, 190, 190) !important;
 }
 #homeTab .homeLibraryButton:hover {
   background: rgba(var(--accent), 0.6) !important;
@@ -228,6 +228,39 @@ button.emby-tab-button:nth-child(5) {
   top: 10vh;
   width: 34em;
 }
+div.section0 {
+  margin-bottom: 24em;
+}
+@media screen and (min-width: 1930px) {
+  div.section0 {
+      margin-bottom: 16em;
+  }
+}
+@media screen and (min-width: 2570px) {
+  div.section0 {
+      margin-bottom: 8em;
+  }
+}
+div.cardBox {
+  margin: 0.2em;
+}
+div.section1 .card.overflowBackdropCard.card-withuserdata {
+  width: 26em !important;
+}
+.detailPageWrapperContainer:has(#itemBirthday:not(.hide)) h1.itemName.infoText.parentNameLast {
+display: block !important;
+}
+.detailPageWrapperContainer:has(#itemBirthday:not(.hide)) .detailImageContainer .card, .detailPageWrapperContainer:has(#itemBirthday:not(.hide)) .detailImageContainer .card .cardBox {
+  display: block !important;
+  padding-left: 62vw;
+  pointer-events: none;
+}
+.layout-mobile .detailPageWrapperContainer:has(#itemBirthday:not(.hide)) .detailImageContainer .card {
+  padding-left: 14em !important;
+}
+div.section5 .card.overflowBackdropCard.card-withuserdata {
+  width: 22em !important;
+}
 .layout-desktop .detailPageWrapperContainer {
   margin-top: -71vh;
 }
@@ -245,6 +278,7 @@ button.emby-tab-button:nth-child(5) {
 }
 .layout-desktop .detailPagePrimaryContent {
   width: 45%;
+  padding-bottom: 3em;
 }
 .layout-desktop .detailPagePrimaryContainer {
   display: inline-table;
@@ -292,7 +326,7 @@ button.emby-tab-button:nth-child(5) {
 .layout-desktop div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
   margin: 0;
   padding-bottom: 0.2em;
-  padding-top: 1em;
+  padding-top: 0;
 }
 .layout-desktop .material-icons.detailButton-icon.play_arrow {
   color: rgba(var(--darkest));
@@ -321,18 +355,17 @@ button.emby-tab-button:nth-child(5) {
   font-size: 95% !important;
   width: 13.6em !important;
 }
-.layout-tv #castContent .card.overflowPortraitCard {
-  font-size: 90% !important;
-  width: 13em !important;
-  margin-left: -1.6vw !important;
-  height: 30vh;
-}
 .layout-desktop #similarCollapsible .card.overflowPortraitCard {
   width: 14.6em !important;
 }
 .layout-desktop #scenesContent .card.itemAction.chapterCard {
   width: 27.1em !important;
 }
+@media (min-width: 87.5em) {
+  .layout-desktop .portraitCard, .layout-desktop .smallBackdropCard, .layout-desktop .squareCard {
+      width: 12%;
+  }
+  }
 .layout-desktop .btnMoreCommands::after,
 .layout-desktop .btnPlay::after,
 .layout-desktop .btnPlayTrailer::after,
@@ -363,15 +396,17 @@ button.emby-tab-button:nth-child(5) {
 a.overview-expand.emby-button {
   font-size: 110%;
 }
+.detailSectionContent {
+  max-width: 60em;
+}
 .detailSectionContent .tagline {
   font-weight: 700;
   font-size: 125% !important;
   margin-bottom: 0.3vh;
 }
 #itemDetailPage .tagline {
-  border-left: 0.25em solid #fff;
   color: #fff;
-  padding: 0 0.5em;
+  padding: 0;
 }
 .css-1jmiiw3,
 .css-1jmiiw3 .MuiDataGrid-withBorderColor {
@@ -631,6 +666,17 @@ a[data-role="button"]:hover {
 a[data-role="button"]:hover {
   background: rgba(var(--accent), 0.5) !important;
 }
+.itemTags.focuscontainer-x {
+  padding-bottom: 1em;
+  opacity: 0.3;
+  transition: 150ms;
+}
+.itemExternalLinks.focuscontainer-x {
+  display: none;
+}
+.itemTags.focuscontainer-x:hover {
+  opacity: 0.8 !important;
+}
 .button-flat:hover,
 .button-link,
 .buttonActive,
@@ -685,6 +731,14 @@ button-flat:hover {
 }
 #itemDetailPage .button-link {
   color: inherit !important;
+}
+.actionSheetMenuItem .material-icons.check:before {
+  color: var(--accent) !important;
+  font-weight: 900;
+}
+button:not(.emby-tab-button-active) .emby-button-foreground {
+  color: #f3f3f3;
+  font-weight: normal;
 }
 .actionSheetMenuItem:hover,
 .navMenuOption:hover {
@@ -905,7 +959,11 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 [dir="ltr"] .cardIndicators {
   right: 0;
 }
+div.tabContent {
+  margin-top: 4em;
+}
 .layout-desktop .detailRibbon {
+  margin-top: 0 !important;
   background: rgba(0, 0, 0, 0);
 }
 .preload {
@@ -914,6 +972,10 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 .backgroundContainer {
   background-color: rgba(var(--accent), 0.17) !important;
 }
+.noBackdropTransparency .detailPageSecondaryContainer,
+.backgroundContainer {
+    background-color: transparent !important;
+}
 .formDialogFooter,
 .formDialogHeader {
   background-color: rgba(var(--accent), 0.15) !important;
@@ -921,6 +983,27 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 }
 .button-flat:hover {
   background: rgba(var(--accent), 0.25);
+}
+.dashboardSection .flex.align-items-center.justify-content-center {
+  margin-top: -100px !important;
+}
+#displayPreferencesPage .selectContainer.fldDisplayMode,
+a.lnkDisplayPreferences.listItem-border.emby-button {
+  display: block !important;
+}
+#displayPreferencesPage .selectContainer,
+#displayssssPreferencesPage .checkboxContainer,
+#displayPreferencesPage .inputContainer,
+#displayPreferencesPage h2.sectionTitle,
+.noHomeButtonHeader .headerTabs.sectionTabs,
+.section0 .sectionTitle,
+.listItemAside.actionSheetItemAsideText, 
+.upNextContainer.upNextDialog,
+h1.itemName.infoText.parentNameLast {
+  display: none !important;
+}
+.dashboardSection .flex.align-items-center.justify-content-center {
+  margin-top: -5vh;
 }
 .dashboardSection h3 {
   margin: 0.5em 0.6em;
@@ -1120,27 +1203,10 @@ a[data-role="button"] {
   display: none !important;
 }
 #loginPage {
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/img/loginImg/login.jpg");
-  background-position: top left;
-  background-size: cover;
-  background-attachment: fixed;
-  animation: 150s infinite alternate backgroundAnimation;
-  z-index: 2;
-}
-#loginPage h1::after {
-  content: "🤔 Moment of Truth 🤔";
-  font-size: 30px;
+  background: url("https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/login-wallpapers/minimal-purple.png") !important;
 }
 #loginPage h1 {
-  font-weight: 700;
-  font-size: 0;
-  margin-bottom: 21.44px;
-  margin-top: 32px !important;
-  text-align: center;
-  padding-top: 20px;
+  display: none;
 }
 .pageTitle {
   margin: 0 0 0 0.15em;
@@ -2090,6 +2156,47 @@ padding: 0em !important;
   padding-right: 38%;
 }
 
+.layout-tv #castContent .card.overflowPortraitCard {
+  font-size: 90% !important;
+  width: 13em !important;
+  margin-left: -1.6vw !important;
+  height: 30vh;
+}
+.layout-tv #itemDetailPage {
+  top: 20em;
+}
+.layout-tv .trackSelections {
+  max-width: 27em;
+}
+.layout-tv .detailPagePrimaryContent {
+  width: 64%;
+}
+.layout-mobile span.homeLibraryText {
+  display: none;
+}
+.layout-mobile #homeTab span.material-icons.homeLibraryIcon {
+  margin: 0;
+}
+.layout-mobile div.section0 .itemsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 100px);
+  display: flex;
+  justify-content: center;
+}
+.layout-mobile div.section0 {
+  margin-bottom: 30em;
+}
+.layout-mobile #homeTab .homeLibraryButton {
+  background: rgb(40 40 40 / 90%) !important;
+}
+.layout-mobile div.section1 .card.overflowBackdropCard.card-withuserdata {
+  width: 20em;
+}
+.layout-mobile div.section5 .card.overflowBackdropCard.card-withuserdata {
+  width: 14em !important;
+}
 /* 1440p */
 
 @media (min-width: 1930px) {
@@ -2156,4 +2263,45 @@ padding: 0em !important;
 		padding: 4em 0.5em 4em 1em !important;
 		border-radius: 28px !important;
 	}
+}
+
+/* SKIP INTRO */
+
+#skipIntro .emby-button {
+  -webkit-align-items: center;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  bottom: 18%;
+  background: #000a;
+  box-shadow: 7px 6px 15px -14px rgba(0,0,0,.65);
+  color: #d5d5d5;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 700;
+  gap: 3px;
+  padding: 12px 20px;
+  position: fixed;
+  right: 16%;
+  transition: 200ms;
+  z-index: 10000;
+}
+#skipIntro .emby-button:hover, #skipIntro .emby-button:focus {
+  background: rgba(var(--accent), 0.7);
+  box-shadow: 0 0 8px rgba(var(--accent), 0.6);
+  filter: brightness(1.2);
+  color: black;
+}
+.videoOsdBottom.videoOsdBottom-maincontrols {
+  background: #000a;
+  padding: 12px;
+  border-radius: 24px 24px 0 0;
+}
+#reactRoot .navMenuOption::before {
+width: 0px !important;
+}
+#reactRoot .navMenuOption:hover {
+  margin-left: 28px !important;
 }
