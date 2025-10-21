@@ -203,13 +203,6 @@ button.emby-tab-button:nth-child(5) {
   flex-wrap: nowrap;
   font-size: 1.6em;
 }
-#indexPage .sectionTitle:before {
-  background: #fff;
-  content: "";
-  height: 2px;
-  margin-right: 0.5em;
-  width: 1em;
-}
 .sectionTitleTextButton > .sectionTitle {
   margin: 0.35em 0.6em;
 }
