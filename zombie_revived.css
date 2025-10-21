@@ -7,13 +7,12 @@ h4 {
   font-family: "Archivo Narrow", sans-serif;
 }
 :root {
-  --zombieFooterText: "Zombie v2.0.12";
-  --accent: 255, 255, 255;
-  --accent-off: 36, 36, 36;
-  --dark: 24, 24, 24;
-  --darkest: 12, 12, 12;
-  --dark-highlight: 48, 48, 48;
-  --dark-apparent: 43, 43, 43;
+  --accent: 216, 196, 241;         /* #D8C4F1 */
+  --accent-off: 123, 116, 132;     /* #7B7484 */
+  --dark: 34, 31, 38;              /* #221F26 */
+  --darkest: 26, 24, 30;           /* #1A181E */
+  --dark-highlight: 67, 62, 73;    /* #433E49 */
+  --dark-apparent: 36, 33, 41;     /* #242129 */
   --white: 243, 242, 243;
   --white-off: 207, 221, 233;
   --jade-green: 0, 172, 111;
@@ -25,7 +24,7 @@ h4 {
   --rounding-circle: 100px;
 }
 .backgroundContainer {
-  background-color: rgba(var(--accent), 0.17) !important;
+  background-color: none !important;
 }
 * {
   scrollbar-width: none;
@@ -58,21 +57,21 @@ h4 {
   opacity: 1 !important;
   height: 1.5em !important;
 }
+.withSectionTabs .backdropContainer {
+  display: none !important;
+}
+#indexPage {
+  margin-top: 0px !important;
+}
 #indexPage .sectionTitle {
   align-items: center;
-  color: #fff;
+  color: #cecece;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
 #indexPage .sectionTitle:before {
-  background: #fff;
-  content: "";
-  height: 0.25em;
-  border-radius: 50px;
-  margin-right: 0.5em;
-  width: 0.25em;
-  display: inline-block;
+  display: none;
 }
 #indexPage .sectionTitle::after {
   background: #fff;
@@ -83,6 +82,39 @@ h4 {
   width: 0.25em;
   display: inline-block;
 }
+div.section0 {
+  margin-bottom: 24em;
+}
+@media screen and (min-width: 1930px) {
+  div.section0 {
+      margin-bottom: 16em;
+  }
+}
+@media screen and (min-width: 2570px) {
+  div.section0 {
+      margin-bottom: 8em;
+  }
+}
+div.cardBox {
+  margin: 0.2em;
+}
+div.section1 .card.overflowBackdropCard.card-withuserdata {
+  width: 26em !important;
+}
+.detailPageWrapperContainer:has(#itemBirthday:not(.hide)) h1.itemName.infoText.parentNameLast {
+display: block !important;
+}
+.detailPageWrapperContainer:has(#itemBirthday:not(.hide)) .detailImageContainer .card, .detailPageWrapperContainer:has(#itemBirthday:not(.hide)) .detailImageContainer .card .cardBox {
+  display: block !important;
+  padding-left: 62vw;
+  pointer-events: none;
+}
+.layout-mobile .detailPageWrapperContainer:has(#itemBirthday:not(.hide)) .detailImageContainer .card {
+  padding-left: 14em !important;
+}
+div.section5 .card.overflowBackdropCard.card-withuserdata {
+  width: 22em !important;
+}
 .dashboardFooter {
   font-family: "Archivo Narrow", serif;
   transition: transform 50ms;
@@ -91,6 +123,9 @@ h4 {
   content: var(--zombieFooterText);
   font-size: 0.8em;
   color: #cecece;
+}
+#loginPage {
+  background: url("https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/login-wallpapers/minimal-purple.png") !important;
 }
 #loginPage h1 {
   display: none;
@@ -164,13 +199,16 @@ div#loginPage {
   width: 80vw;
 }
 .backdropImage {
-  filter: blur(5px) saturate(120%) contrast(120%) brightness(50%);
   animation: 0.2s ease-in-out both backdrop-fadein;
 }
 .layout-mobile .backgroundContainer,
 .layout-desktop .backgroundContainer {
   background: url(https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/gradients/blue.png)
     no-repeat center center;
+}
+.noBackdropTransparency .detailPageSecondaryContainer,
+.backgroundContainer {
+    background-color: transparent !important;
 }
 .sectionTitleContainer-cards {
   margin: 0;
@@ -307,6 +345,12 @@ progress::-webkit-progress-value {
 .button-link {
   color: rgba(var(--accent)) !important;
 }
+.paper-icon-button-light>.material-icons {
+  font-size: 1em !important;
+}
+#indexPage .homeLibraryButton, .emby-tab-button {
+  max-width: 50em !important;
+}
 #itemDetailPage .button-link {
   color: inherit !important;
 }
@@ -318,6 +362,14 @@ progress::-webkit-progress-value {
 }
 .actionSheetMenuItem:hover .listItemBodyText.secondary {
   color: rgba(var(--darkest), 0.85);
+}
+.actionSheetMenuItem .material-icons.check:before {
+  color: var(--accent) !important;
+  font-weight: 900;
+}
+button:not(.emby-tab-button-active) .emby-button-foreground {
+  color: #f3f3f3;
+  font-weight: normal;
 }
 .navMenuOption:hover {
   background: rgba(var(--accent), 0.75) !important;
@@ -563,11 +615,16 @@ a[href*="anidb.net"] {
   align-items: center;
 }
 .itemExternalLinks.focuscontainer-x {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #fff0 !important;
-  margin: 1.5em 0 !important;
+  display: none;
+}
+.itemTags.focuscontainer-x {
+  padding-bottom: 1em;
+  opacity: 0.3;
+  transition: 150ms;
+}
+
+.itemTags.focuscontainer-x:hover {
+  opacity: 0.8 !important;
 }
 .adminDrawerLogo img,
 imgLogoIcon {
@@ -627,6 +684,9 @@ imgLogoIcon {
 .homeLibraryText,
 .emby-button-foreground {
   color: rgb(var(--darkest));
+}
+span.homeLibraryText {
+  color: rgb(156, 156, 156);
 }
 #indexPage .homeLibraryButton,
 .emby-tab-button {
@@ -767,6 +827,7 @@ imgLogoIcon {
 }
 .layout-desktop .detailPagePrimaryContent {
   width: 69vw;
+  padding-bottom: 3em;
 }
 .layout-desktop .detailPagePrimaryContainer {
   display: inline-table;
@@ -842,6 +903,7 @@ imgLogoIcon {
 }
 .layout-desktop div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
   margin: 0;
+  padding-top: 0 !important;
   padding-bottom: 0.2em;
 }
 .layout-desktop .material-icons.detailButton-icon.play_arrow {
@@ -878,14 +940,16 @@ imgLogoIcon {
 a.overview-expand.emby-button {
   font-size: 110%;
 }
+.detailSectionContent {
+  max-width: 60em;
+}
 .detailSectionContent .tagline {
   font-weight: 700;
   font-size: 125% !important;
   margin-bottom: 0.3vh;
 }
 #itemDetailPage .tagline {
-  border-left: 0.25em solid rgb(var(--white));
-  padding: 0 0.5em;
+  padding: 0;
 }
 .detailSectionContent .detail-clamp-text,
 .detailSectionContent .overview {
@@ -2016,6 +2080,27 @@ div.dashboardSection:nth-child(3) > div:nth-child(2) .listItem {
   background-color: rgba(var(--accent-off)) !important;
   color: rgba(var(--darkest)) !important;
 }
+.dashboardSection .flex.align-items-center.justify-content-center {
+    margin-top: -100px !important;
+}
+#displayPreferencesPage .selectContainer.fldDisplayMode,
+a.lnkDisplayPreferences.listItem-border.emby-button {
+    display: block !important;
+}
+#displayPreferencesPage .selectContainer,
+#displayssssPreferencesPage .checkboxContainer,
+#displayPreferencesPage .inputContainer,
+#displayPreferencesPage h2.sectionTitle,
+.noHomeButtonHeader .headerTabs.sectionTabs,
+.section0 .sectionTitle,
+.listItemAside.actionSheetItemAsideText, 
+.upNextContainer.upNextDialog,
+h1.itemName.infoText.parentNameLast {
+    display: none !important;
+}
+.dashboardSection .flex.align-items-center.justify-content-center {
+    margin-top: -5vh;
+}
 .listItemIcon.material-icons.notifications_active {
   background-color: rgba(var(--accent-off)) !important;
   color: rgba(var(--darkest)) !important;
@@ -2104,7 +2189,8 @@ fieldset {
   margin-right: 0.14em;
 }
 #homeTab .homeLibraryButton {
-  background: rgba(var(--accent), 0.4) !important;
+  background: rgba(40, 40, 40, 0.8) !important;
+  color: rgb(190, 190, 190) !important;
 }
 #homeTab .homeLibraryButton:hover {
   background: rgba(var(--accent), 0.6) !important;
@@ -2170,7 +2256,7 @@ fieldset {
   margin-right: -30vw;
   margin-bottom: 1vh;
   padding-left: 2.62em;
-  margin-right: 5vw;
+  margin-right: 0;
   background-color: rgba(var(--darkest), 0.77);
   padding-top: 0.3em;
   backdrop-filter: blur(10px);
@@ -2229,6 +2315,9 @@ fieldset {
   margin-top: auto;
   margin-bottom: auto;
 }
+h3.pageTitle.pageTitleWithLogo.pageTitleWithDefaultLogo {
+    background-image: url("logo.png") !important;
+}
 .layout-mobile .emby-tab-button {
   padding: 0.9em 0.95em;
   margin-top: 0.4em;
@@ -2241,6 +2330,11 @@ fieldset {
   top: auto;
   display: none !important;
 }
+@media (min-width: 87.5em) {
+  .layout-desktop .portraitCard, .layout-desktop .smallBackdropCard, .layout-desktop .squareCard {
+      width: 12%;
+  }
+  }
 .layout-mobile .detailImageContainer .card.portraitCard {
   display: none !important;
 }
@@ -2254,8 +2348,14 @@ fieldset {
   height: 40vw !important;
   width: 80vw !important;
 }
+div.tabContent {
+  margin-top: 4em;
+}
 .detailRibbon {
   background: #fff0;
+}
+.layout-desktop .detailRibbon {
+  margin-top: 0 !important;
 }
 .detail-clamp-text {
   line-clamp: 4;
@@ -2442,6 +2542,44 @@ layout-mobile .detailPagePrimaryContent {
 .skip-button:hover {
   background-color: rgba(var(--accent));
 }
+#skipIntro .emby-button {
+  -webkit-align-items: center;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  bottom: 18%;
+  background: #000a;
+  box-shadow: 7px 6px 15px -14px rgba(0,0,0,.65);
+  color: #d5d5d5;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 700;
+  gap: 3px;
+  padding: 12px 20px;
+  position: fixed;
+  right: 16%;
+  transition: 200ms;
+  z-index: 10000;
+}
+#skipIntro .emby-button:hover, #skipIntro .emby-button:focus {
+  background: rgba(var(--accent), 0.7);
+  box-shadow: 0 0 8px rgba(var(--accent), 0.6);
+  filter: brightness(1.2);
+  color: black;
+}
+.videoOsdBottom.videoOsdBottom-maincontrols {
+  background: #000a;
+  padding: 12px;
+  border-radius: 24px 24px 0 0;
+}
+#reactRoot .navMenuOption::before {
+width: 0px !important;
+}
+#reactRoot .navMenuOption:hover {
+  margin-left: 28px !important;
+}
 .chapterThumbTextContainer {
   background: rgba(var(--dark), 0.5) !important;
 }
@@ -2495,9 +2633,6 @@ layout-mobile .detailPagePrimaryContent {
   outline: none;
   border-radius: 12px;
   margin-left: 1.5em;
-}
-.layout-tv .backdropImage {
-  filter: blur(16px) saturate(120%) contrast(120%) brightness(40%);
 }
 .layout-tv {
   font-size: 190% !important;
@@ -2625,8 +2760,17 @@ layout-mobile .detailPagePrimaryContent {
   padding-left: 4vw;
   padding-right: 2%;
 }
+.layout-tv #itemDetailPage {
+  top: 20em;
+}
 .layout-tv #itemDetailPage .itemTags {
   display: none;
+}
+.layout-tv .trackSelections {
+  max-width: 27em;
+}
+.layout-tv .detailPagePrimaryContent {
+  width: 64%;
 }
 .layout-tv [dir="ltr"] .itemsContainer > .card > .cardBox {
   margin-left: 0;
@@ -2749,6 +2893,32 @@ layout-mobile .detailPagePrimaryContent {
   .verticalSection.section0 .textActionButton {
     display: none;
   }
+}
+.layout-mobile span.homeLibraryText {
+  display: none;
+}
+.layout-mobile #homeTab span.material-icons.homeLibraryIcon {
+  margin: 0;
+}
+.layout-mobile div.section0 .itemsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 100px);
+  display: flex;
+  justify-content: center;
+}
+.layout-mobile div.section0 {
+  margin-bottom: 30em;
+}
+.layout-mobile #homeTab .homeLibraryButton {
+  background: rgb(40 40 40 / 90%) !important;
+}
+.layout-mobile div.section1 .card.overflowBackdropCard.card-withuserdata {
+  width: 20em;
+}
+.layout-mobile div.section5 .card.overflowBackdropCard.card-withuserdata {
+  width: 14em !important;
 }
 @media (orientation: landscape) {
   .layout-mobile .backgroundContainer {
