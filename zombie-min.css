@@ -294,7 +294,9 @@ div.section5 .card.overflowBackdropCard.card-withuserdata {
   font-weight: 400;
 }
 .infoWrapper {
-  margin-bottom: 3vh;
+  margin-bottom: 1vh;
+  flex: unset !important;
+  --webkit-flex: unset !important;
 }
 .layout-desktop .btnPlay {
   background-color: rgb(var(--white));
@@ -2143,6 +2145,8 @@ padding: 0em !important;
 .detailRibbon {
   -webkit-flex: unset !important;
   flex: unset !important;
+  flex-direction: column;
+  align-items: flex-start;
 }
 #childrenCollapsible .padded-right {
   padding-right: 38%;
