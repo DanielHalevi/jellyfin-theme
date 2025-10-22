@@ -269,7 +269,8 @@ div.section5 .card.overflowBackdropCard.card-withuserdata {
   padding-left: 5%;
 }
 .layout-desktop .detailPagePrimaryContent {
-  width: 45%;
+  width: 69%;
+  padding-top: 4em;
   padding-bottom: 3em;
 }
 .layout-desktop .detailPagePrimaryContainer {
@@ -963,7 +964,7 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 .noBackdropTransparency .detailPagePrimaryContainer, 
 .noBackdropTransparency .detailPageSecondaryContainer
 .backgroundContainer {
-    background-color: transparent !important;
+    background-color: unset !important;
 }
 .formDialogFooter,
 .formDialogHeader {
@@ -1477,7 +1478,7 @@ fieldset {
 }
 .layout-desktop .nextUpSection {
   border-radius: 34px;
-  margin: -5.5vh 2.5em 1vh 66%;
+  margin: -5.5vh 2.5em 1vh 85%;
   padding-left: 2.5em;
   padding-right: 1.5em;
   padding-top: 0em;
