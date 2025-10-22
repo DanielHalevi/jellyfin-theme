@@ -951,9 +951,6 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 [dir="ltr"] .cardIndicators {
   right: 0;
 }
-div.tabContent {
-  margin-top: 4em;
-}
 .layout-desktop .detailRibbon {
   margin-top: 0 !important;
   background: rgba(0, 0, 0, 0);
