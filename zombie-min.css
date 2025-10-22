@@ -961,9 +961,6 @@ div.tabContent {
 .preload {
   background-color: #000;
 }
-.backgroundContainer {
-  background-color: rgba(var(--accent), 0.17) !important;
-}
 .noBackdropTransparency .detailPagePrimaryContainer, 
 .noBackdropTransparency .detailPageSecondaryContainer
 .backgroundContainer {
